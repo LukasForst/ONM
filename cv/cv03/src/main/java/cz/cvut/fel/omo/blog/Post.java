@@ -1,6 +1,7 @@
 package cz.cvut.fel.omo.blog;
 
-import java.lang.reflect.Array;
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,28 +10,21 @@ import java.util.List;
  * @date 10/17/17
  */
 public class Post {
-    private Topic topic;
-    private String text;
+    @Getter private Topic topic;
+    @Getter private String text;
+    @Getter private String title;
 
     private ArrayList<String> comments;
 
-    public Post(Topic topic, String text) {
-        this.topic = topic;
+    public Post(String text, String title) {
         this.text = text;
+        this.title = title;
 
         comments = new ArrayList<>();
     }
 
-    public Topic getTopic() {
-        return topic;
-    }
-
-    public String getText() {
-        return text;
-    }
-
     public void registerToTopic(Topic topic){
-
+        this.topic = topic;
     }
 
     public void publishPost(){
@@ -41,7 +35,7 @@ public class Post {
         comments.add(comment);
     }
 
-    public List<String> comments(){
-        return comments;
+    public List<String> getComments(){
+        return new ArrayList<>(comments);
     }
 }

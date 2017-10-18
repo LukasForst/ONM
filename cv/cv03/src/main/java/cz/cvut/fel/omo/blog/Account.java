@@ -1,30 +1,49 @@
 package cz.cvut.fel.omo.blog;
 
+import lombok.Getter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author Lukas Forst
  * @date 10/17/17
  */
 public abstract class Account {
-    private final String userName;
-    private final String password;
+    @Getter private final String userName;
+    @Getter private final String password;
 
-    private final Blog blog;
+    private List<AccountPermissions> accountPermissionsList;
 
-    protected Account(String userName, String password, Blog blog) {
+    protected final Blog blog;
+
+    protected Account(String userName, String password, Blog blog, AccountPermissions ... permissions) {
         this.userName = userName;
         this.password = password;
         this.blog = blog;
+
+        accountPermissionsList = new ArrayList<>();
+        accountPermissionsList.addAll(Arrays.asList(permissions));
     }
 
-    public String getUserName() {
-        return userName;
+    public boolean hasPermission(AccountPermissions permission){
+        return accountPermissionsList.contains(permission);
     }
 
     public boolean verifyPassword(String password){
         return this.password.equals(password);
     }
 
-    public abstract void writeNewPost(String title, String text);
-    public abstract void readBlog();
-    public abstract void readBlog(String topic);
+    public void readBlog(){
+
+    }
+    public void readBlog(String topic){
+
+    }
+
+    public void addComment(Post post, String comment){
+
+    }
 }
+
