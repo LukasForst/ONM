@@ -1,5 +1,10 @@
 package cz.cvut.fel.omo.blog;
 
+import cz.cvut.fel.omo.blog.secured.Account;
+import cz.cvut.fel.omo.blog.secured.AdminAccount;
+import cz.cvut.fel.omo.blog.secured.Blog;
+import cz.cvut.fel.omo.blog.secured.UserAccount;
+
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;

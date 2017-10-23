@@ -32,4 +32,13 @@ public class Topic {
     public List<Post> getPostsFromTopic(){
         return new ArrayList<>(posts);
     }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "Title='" + topicTitle + '\'' +
+                ", Description='" + text + '\'' +
+                ", posts=" + Arrays.toString(posts.toArray()) +
+                '}';
+    }
 }

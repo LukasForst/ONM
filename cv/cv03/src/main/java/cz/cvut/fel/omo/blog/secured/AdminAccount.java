@@ -1,4 +1,7 @@
-package cz.cvut.fel.omo.blog;
+package cz.cvut.fel.omo.blog.secured;
+
+import cz.cvut.fel.omo.blog.Post;
+import cz.cvut.fel.omo.blog.Topic;
 
 /**
  * @author Lukas Forst
@@ -14,7 +17,7 @@ public class AdminAccount extends Account {
         blog.createTopic(this, new Topic(topic, text));
     }
 
-    public void manageUserAccount(UserAccount account, boolean isActive){
+    public void manageUserAccount(UserAccount account, boolean isActive) {
         account.setActive(isActive);
     }
 

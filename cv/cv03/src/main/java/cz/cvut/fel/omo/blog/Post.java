@@ -3,6 +3,7 @@ package cz.cvut.fel.omo.blog;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -37,5 +38,14 @@ public class Post {
 
     public List<String> getComments(){
         return new ArrayList<>(comments);
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "text='" + text + '\'' +
+                ", title='" + title + '\'' +
+                ", comments=" + Arrays.toString(comments.toArray()) +
+                '}';
     }
 }

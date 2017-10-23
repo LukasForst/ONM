@@ -1,6 +1,8 @@
-package cz.cvut.fel.omo.blog;
+package cz.cvut.fel.omo.blog.secured;
 
 import com.sun.istack.internal.NotNull;
+import cz.cvut.fel.omo.blog.Post;
+import cz.cvut.fel.omo.blog.Topic;
 import lombok.val;
 
 import java.util.ArrayList;
@@ -22,15 +24,15 @@ public class Blog {
         posts = new ArrayList<>();
     }
 
-    public void createNewAccount(@NotNull String username,@NotNull String password, boolean isAdmin) {
-        if(!isAdmin){
-            accounts.add(new UserAccount(username, password, this ));
-        } else{
-            accounts.add(new AdminAccount(username, password, this ));
+    public void createNewAccount(@NotNull String username, @NotNull String password, boolean isAdmin) {
+        if (!isAdmin) {
+            accounts.add(new UserAccount(username, password, this));
+        } else {
+            accounts.add(new AdminAccount(username, password, this));
         }
     }
 
-    public Optional<Account> login(@NotNull String username,@NotNull String password) {
+    public Optional<Account> login(@NotNull String username, @NotNull String password) {
         return accounts.stream().filter(a -> username.equals(a.getUserName()) && a.verifyPassword(password)).findFirst();
     }
 
@@ -42,28 +44,28 @@ public class Blog {
         return topics.stream().filter(topic -> title.equals(topic.getTopicTitle())).findFirst();
     }
 
-    public void displayTopics(){
-
+    public void displayTopics() {
+        System.out.println(topics.toString());
     }
 
-        public void writePost(@NotNull Account account,@NotNull Post post){
-        if(account.hasPermission(AccountPermissions.WRITE_POST)){
+    void writePost(@NotNull Account account, @NotNull Post post) {
+        if (account.hasPermission(AccountPermissions.WRITE_POST)) {
             posts.add(post);
-        } else{
+        } else {
             throw new IllegalStateException("This account does not have permission to post new article to the blog!");
         }
     }
 
-    public void createTopic(@NotNull Account account,@NotNull Topic topic){
-        if(account.hasPermission(AccountPermissions.CREATE_TOPIC)){
+    void createTopic(@NotNull Account account, @NotNull Topic topic) {
+        if (account.hasPermission(AccountPermissions.CREATE_TOPIC)) {
             topics.add(topic);
-        } else{
+        } else {
             throw new IllegalStateException("This account does not have permission to create new topic in the blog!");
         }
     }
 
-    public List<Topic> getAvailableTopics(@NotNull Account account){
-        if(account.hasPermission(AccountPermissions.SEE_TOPICS)){
+    List<Topic> getAvailableTopics(@NotNull Account account) {
+        if (account.hasPermission(AccountPermissions.SEE_TOPICS)) {
             val returnList = new ArrayList<Topic>();
             topics.forEach(topic -> {
                 val tmpTopic = new Topic(topic.getTopicTitle(), topic.getText());
@@ -71,7 +73,7 @@ public class Blog {
                 returnList.add(tmpTopic);
             });
             return returnList;
-        } else{
+        } else {
             throw new IllegalStateException("This account does not have permission to see topics in the blog!");
         }
     }
