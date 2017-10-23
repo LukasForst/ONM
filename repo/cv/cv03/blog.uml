@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>cz.cvut.fel.omo.blog</OriginalElement>
+  <nodes>
+    <node x="0.0" y="441.0">cz.cvut.fel.omo.blog.Topic</node>
+    <node x="129.78419540229925" y="103.0">cz.cvut.fel.omo.blog.Post</node>
+    <node x="274.809260710554" y="0.0">cz.cvut.fel.omo.blog.DisplayableComponent</node>
+    <node x="718.1882622406332" y="1020.0">cz.cvut.fel.omo.blog.Account</node>
+    <node x="985.6785714285716" y="499.0">cz.cvut.fel.omo.blog.UserAccount</node>
+    <node x="621.6785714285716" y="499.0">cz.cvut.fel.omo.blog.Dashboard</node>
+    <node x="185.9882622406331" y="1461.0">cz.cvut.fel.omo.blog.Main</node>
+    <node x="314.0758620689659" y="1282.0">cz.cvut.fel.omo.blog.AdminAccount</node>
+    <node x="1011.1839985445588" y="207.0">cz.cvut.fel.omo.blog.AccountPermissions</node>
+    <node x="268.6785714285715" y="680.0">cz.cvut.fel.omo.blog.Blog</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cz.cvut.fel.omo.blog.Account" target="cz.cvut.fel.omo.blog.Blog">
+      <point x="-116.36363636363637" y="-96.0" />
+      <point x="761.8246258769968" y="990.0" />
+      <point x="496.9285714285715" y="990.0" />
+      <point x="62.25" y="130.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.AdminAccount" target="cz.cvut.fel.omo.blog.Topic">
+      <point x="-147.42857142857144" y="-49.5" />
+      <point x="338.64729064039443" y="1262.0" />
+      <point x="68.61326224063316" y="1262.0" />
+      <point x="68.61326224063316" y="660.0" />
+      <point x="77.625" y="660.0" />
+      <point x="-25.875" y="84.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Account" target="cz.cvut.fel.omo.blog.Post">
+      <point x="-29.090909090909122" y="-96.0" />
+      <point x="849.0973531497241" y="960.0" />
+      <point x="611.1785714285716" y="960.0" />
+      <point x="611.1785714285716" y="401.0" />
+      <point x="338.5064176245214" y="401.0" />
+      <point x="98.22222222222217" y="119.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Blog" target="cz.cvut.fel.omo.blog.UserAccount">
+      <point x="120.72727272727275" y="-130.0" />
+      <point x="555.4058441558443" y="650.0" />
+      <point x="998.8785714285716" y="650.0" />
+      <point x="-52.80000000000001" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.UserAccount" target="cz.cvut.fel.omo.blog.AccountPermissions">
+      <point x="0.0" y="-26.5" />
+      <point x="1051.6785714285716" y="421.0" />
+      <point x="1059.4839985445587" y="421.0" />
+      <point x="-32.19999999999999" y="15.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.AdminAccount" target="cz.cvut.fel.omo.blog.AccountPermissions">
+      <point x="147.42857142857144" y="-49.5" />
+      <point x="633.5044334975373" y="1262.0" />
+      <point x="1104.6741463278104" y="1262.0" />
+      <point x="1104.6741463278104" y="990.0" />
+      <point x="1176.400169801463" y="990.0" />
+      <point x="1176.400169801463" y="401.0" />
+      <point x="1156.0839985445587" y="401.0" />
+      <point x="64.39999999999998" y="15.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Main" target="cz.cvut.fel.omo.blog.UserAccount">
+      <point x="73.71428571428572" y="-26.5" />
+      <point x="345.7025479549188" y="1441.0" />
+      <point x="1154.400169801463" y="1441.0" />
+      <point x="1154.400169801463" y="660.0" />
+      <point x="1104.4785714285715" y="660.0" />
+      <point x="52.80000000000001" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Blog" target="cz.cvut.fel.omo.blog.Account">
+      <point x="103.75" y="130.0" />
+      <point x="538.4285714285716" y="980.0" />
+      <point x="790.915534967906" y="980.0" />
+      <point x="-87.27272727272728" y="-96.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Main" target="cz.cvut.fel.omo.blog.Account">
+      <point x="49.14285714285717" y="-26.5" />
+      <point x="321.1311193834903" y="1431.0" />
+      <point x="958.1882622406332" y="1431.0" />
+      <point x="80.0" y="96.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.AdminAccount" target="cz.cvut.fel.omo.blog.Account">
+      <point x="49.14285714285717" y="-49.5" />
+      <point x="535.2187192118231" y="1242.0" />
+      <point x="798.1882622406332" y="1242.0" />
+      <point x="-80.0" y="96.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Topic" target="cz.cvut.fel.omo.blog.DisplayableComponent">
+      <point x="-82.80000000000007" y="-84.5" />
+      <point x="20.699999999999932" y="361.0" />
+      <point x="81.38419540229916" y="361.0" />
+      <point x="81.38419540229916" y="73.0" />
+      <point x="292.059260710554" y="73.0" />
+      <point x="-86.25" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Main" target="cz.cvut.fel.omo.blog.Blog">
+      <point x="-24.571428571428555" y="-26.5" />
+      <point x="247.41683366920455" y="1401.0" />
+      <point x="288.06250746380067" y="1401.0" />
+      <point x="288.06250746380067" y="1000.0" />
+      <point x="289.4285714285715" y="1000.0" />
+      <point x="-145.25" y="130.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Main" target="cz.cvut.fel.omo.blog.AdminAccount">
+      <point x="24.571428571428584" y="-26.5" />
+      <point x="296.5596908120617" y="1421.0" />
+      <point x="486.0758620689659" y="1421.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Blog" target="cz.cvut.fel.omo.blog.DisplayableComponent">
+      <point x="2.8421709430404007E-14" y="-130.0" />
+      <point x="434.67857142857156" y="640.0" />
+      <point x="405.90584415584425" y="640.0" />
+      <point x="405.90584415584425" y="83.0" />
+      <point x="395.559260710554" y="83.0" />
+      <point x="17.25" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Main" target="cz.cvut.fel.omo.blog.Post">
+      <point x="-49.14285714285717" y="-26.5" />
+      <point x="222.84540509777594" y="1441.0" />
+      <point x="217.5" y="1441.0" />
+      <point x="217.5" y="411.0" />
+      <point x="240.28419540229925" y="411.0" />
+      <point x="0.0" y="119.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.AdminAccount" target="cz.cvut.fel.omo.blog.UserAccount">
+      <point x="98.28571428571433" y="-49.5" />
+      <point x="584.3615763546802" y="1252.0" />
+      <point x="1081.2544334975373" y="1252.0" />
+      <point x="1081.2544334975373" y="660.0" />
+      <point x="1078.0785714285716" y="660.0" />
+      <point x="26.399999999999977" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Post" target="cz.cvut.fel.omo.blog.DisplayableComponent">
+      <point x="0.0" y="-119.0" />
+      <point x="240.28419540229925" y="83.0" />
+      <point x="326.559260710554" y="83.0" />
+      <point x="-51.75" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Main" target="cz.cvut.fel.omo.blog.Topic">
+      <point x="-73.71428571428572" y="-26.5" />
+      <point x="198.27397652634738" y="1441.0" />
+      <point x="57.61326224063316" y="1441.0" />
+      <point x="57.61326224063316" y="660.0" />
+      <point x="25.875" y="660.0" />
+      <point x="-77.625" y="84.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Post" target="cz.cvut.fel.omo.blog.Topic">
+      <point x="-24.555555555555543" y="119.0" />
+      <point x="215.7286398467437" y="401.0" />
+      <point x="186.29999999999995" y="401.0" />
+      <point x="82.79999999999995" y="-84.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Account" target="cz.cvut.fel.omo.blog.AccountPermissions">
+      <point x="116.36363636363637" y="-96.0" />
+      <point x="994.5518986042696" y="980.0" />
+      <point x="1165.400169801463" y="980.0" />
+      <point x="1165.400169801463" y="411.0" />
+      <point x="1123.8839985445588" y="411.0" />
+      <point x="32.200000000000045" y="15.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.UserAccount" target="cz.cvut.fel.omo.blog.Blog">
+      <point x="-26.399999999999977" y="26.5" />
+      <point x="1025.2785714285715" y="660.0" />
+      <point x="585.5876623376623" y="660.0" />
+      <point x="150.90909090909088" y="-130.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Account" target="cz.cvut.fel.omo.blog.DisplayableComponent">
+      <point x="145.45454545454544" y="-96.0" />
+      <point x="1023.6428076951786" y="1000.0" />
+      <point x="1193.4598606135246" y="1000.0" />
+      <point x="1193.4598606135246" y="73.0" />
+      <point x="464.559260710554" y="73.0" />
+      <point x="86.25" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.AdminAccount" target="cz.cvut.fel.omo.blog.Blog">
+      <point x="-49.14285714285711" y="-49.5" />
+      <point x="436.93300492610877" y="1242.0" />
+      <point x="363.23826224063316" y="1242.0" />
+      <point x="363.23826224063316" y="1000.0" />
+      <point x="372.4285714285715" y="1000.0" />
+      <point x="-62.25" y="130.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.UserAccount" target="cz.cvut.fel.omo.blog.Account">
+      <point x="0.0" y="26.5" />
+      <point x="1051.6785714285716" y="660.0" />
+      <point x="1059.3785714285714" y="660.0" />
+      <point x="1059.3785714285714" y="960.0" />
+      <point x="936.3700804224513" y="960.0" />
+      <point x="58.18181818181819" y="-96.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.AdminAccount" target="cz.cvut.fel.omo.blog.Post">
+      <point x="-98.28571428571428" y="-49.5" />
+      <point x="387.7901477832516" y="1252.0" />
+      <point x="228.5" y="1252.0" />
+      <point x="228.5" y="421.0" />
+      <point x="264.8397509578548" y="421.0" />
+      <point x="24.555555555555543" y="119.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Blog" target="cz.cvut.fel.omo.blog.AccountPermissions">
+      <point x="30.181818181818215" y="-130.0" />
+      <point x="464.8603896103897" y="660.0" />
+      <point x="448.78170622481014" y="660.0" />
+      <point x="448.78170622481014" y="421.0" />
+      <point x="1027.283998544559" y="421.0" />
+      <point x="-64.39999999999998" y="15.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Blog" target="cz.cvut.fel.omo.blog.Dashboard">
+      <point x="60.363636363636374" y="-130.0" />
+      <point x="495.0422077922079" y="630.0" />
+      <point x="664.6785714285716" y="630.0" />
+      <point x="-129.0" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Blog" target="cz.cvut.fel.omo.blog.Topic">
+      <point x="-150.90909090909088" y="-130.0" />
+      <point x="283.7694805194806" y="660.0" />
+      <point x="129.375" y="660.0" />
+      <point x="25.875" y="84.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Account" target="cz.cvut.fel.omo.blog.Dashboard">
+      <point x="29.090909090909122" y="-96.0" />
+      <point x="907.2791713315423" y="1000.0" />
+      <point x="891.2382622406332" y="1000.0" />
+      <point x="891.2382622406332" y="640.0" />
+      <point x="922.6785714285716" y="640.0" />
+      <point x="129.00000000000003" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Dashboard" target="cz.cvut.fel.omo.blog.DisplayableComponent">
+      <point x="0.0" y="-26.5" />
+      <point x="793.6785714285716" y="411.0" />
+      <point x="749.4749076354678" y="411.0" />
+      <point x="749.4749076354678" y="83.0" />
+      <point x="430.059260710554" y="83.0" />
+      <point x="51.75" y="26.5" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Blog" target="cz.cvut.fel.omo.blog.Post">
+      <point x="-90.5454545454545" y="-130.0" />
+      <point x="344.133116883117" y="660.0" />
+      <point x="348.89915005971034" y="660.0" />
+      <point x="348.89915005971034" y="421.0" />
+      <point x="289.39530651341033" y="421.0" />
+      <point x="49.111111111111086" y="119.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Topic" target="cz.cvut.fel.omo.blog.Post">
+      <point x="-41.40000000000009" y="-84.5" />
+      <point x="62.09999999999991" y="371.0" />
+      <point x="142.06197318007702" y="371.0" />
+      <point x="-98.22222222222223" y="119.0" />
+    </edge>
+    <edge source="cz.cvut.fel.omo.blog.Blog" target="cz.cvut.fel.omo.blog.AdminAccount">
+      <point x="-20.75" y="130.0" />
+      <point x="413.9285714285715" y="1232.0" />
+      <point x="486.0758620689659" y="1232.0" />
+      <point x="2.8421709430404007E-14" y="-49.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="218.5" y="1270.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
