@@ -1,8 +1,11 @@
-package cz.cvut.fel.omo.blog.secured;
+package cz.cvut.fel.omo.blog.security;
 
+import cz.cvut.fel.omo.blog.Dashboard;
+import cz.cvut.fel.omo.blog.DisplayableComponent;
 import cz.cvut.fel.omo.blog.Post;
 import cz.cvut.fel.omo.blog.Topic;
 import lombok.Getter;
+import lombok.val;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,6 +25,7 @@ public abstract class Account {
     private List<AccountPermissions> accountPermissionsList;
 
     protected final Blog blog;
+    private Dashboard board;
 
     protected Account(String userName, String password, Blog blog, AccountPermissions... permissions) {
         this.userName = userName;
@@ -30,6 +34,7 @@ public abstract class Account {
 
         accountPermissionsList = new ArrayList<>();
         accountPermissionsList.addAll(Arrays.asList(permissions));
+        board = new Dashboard();
     }
 
     public boolean hasPermission(AccountPermissions permission) {
@@ -41,11 +46,13 @@ public abstract class Account {
     }
 
     public void readBlog() {
-
+        val listToDisplay = new ArrayList<DisplayableComponent>();
+        listToDisplay.addAll(blog.getAvailableTopics(this));
+        board.display(listToDisplay, "Topics");
     }
 
     public void readBlog(String topicTitle) {
-        Optional<Topic> topic = blog.getAvailableTopics(this).stream().filter(x -> x.getText().equals(topicTitle)).findFirst();
+        val topic = blog.getAvailableTopics(this).stream().filter(x -> x.getTopicTitle().equals(topicTitle)).findFirst();
         if (!topic.isPresent()) {
             System.out.println("Topic does not exists in this blog.");
         } else {
@@ -54,7 +61,7 @@ public abstract class Account {
     }
 
     public void addComment(Post post, String comment) {
-
+        post.addComment(comment);
     }
 }
 

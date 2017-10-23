@@ -1,4 +1,4 @@
-package cz.cvut.fel.omo.blog.secured;
+package cz.cvut.fel.omo.blog.security;
 
 import cz.cvut.fel.omo.blog.Post;
 import cz.cvut.fel.omo.blog.Topic;

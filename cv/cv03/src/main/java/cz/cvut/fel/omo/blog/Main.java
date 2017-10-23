@@ -1,9 +1,9 @@
 package cz.cvut.fel.omo.blog;
 
-import cz.cvut.fel.omo.blog.secured.Account;
-import cz.cvut.fel.omo.blog.secured.AdminAccount;
-import cz.cvut.fel.omo.blog.secured.Blog;
-import cz.cvut.fel.omo.blog.secured.UserAccount;
+import cz.cvut.fel.omo.blog.security.Account;
+import cz.cvut.fel.omo.blog.security.AdminAccount;
+import cz.cvut.fel.omo.blog.security.Blog;
+import cz.cvut.fel.omo.blog.security.UserAccount;
 
 import java.util.Optional;
 import java.util.logging.Level;

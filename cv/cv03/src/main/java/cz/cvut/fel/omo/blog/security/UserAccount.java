@@ -1,8 +1,5 @@
-package cz.cvut.fel.omo.blog.secured;
+package cz.cvut.fel.omo.blog.security;
 
-import cz.cvut.fel.omo.blog.secured.Account;
-import cz.cvut.fel.omo.blog.secured.AccountPermissions;
-import cz.cvut.fel.omo.blog.secured.Blog;
 import lombok.Getter;
 import lombok.Setter;
 
