@@ -8,35 +8,15 @@ interface OMOSetView {
     OMOSetView copy(); //vrátí kopii množiny
 }
 
-abstract class OMOSetViewAbstract implements OMOSetView {
-    protected abstract List<Integer> performUpdate();
-
-    @Override
-    public boolean contains(int element) {
-        return performUpdate().contains(element);
-    }
-
-    @Override
-    public int[] toArray() {
-        List<Integer> data = performUpdate();
-        return data.stream().mapToInt(Integer::intValue).toArray();
-    }
-
-    @Override
-    public OMOSetView copy() {
-        return new OMOSet(performUpdate());
-    }
-}
-
-class OMOSet extends OMOSetViewAbstract {
-    private List<Integer> data;
+class OMOSet implements OMOSetView {
+    private Set<Integer> data;
 
     OMOSet() {
-        data = new ArrayList<>();
+        data = new HashSet<>();
     }
 
-    OMOSet(List<Integer> data) {
-        this.data = new ArrayList<>(data);
+    OMOSet(Set<Integer> data) {
+        this.data = new HashSet<>(data);
     }
 
     void add(int element) {
@@ -44,18 +24,26 @@ class OMOSet extends OMOSetViewAbstract {
     }
 
     void remove(int element) {
-        int idx = data.indexOf(element);
-        if(idx != -1)
-            data.remove(idx);
+        data.remove(element);
     }
 
     @Override
-    protected List<Integer> performUpdate() {
-        return data;
+    public boolean contains(int element) {
+        return data.contains(element);
+    }
+
+    @Override
+    public int[] toArray() {
+        return data.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    @Override
+    public OMOSetView copy() {
+        return new OMOSet(data);
     }
 }
 
-class OMOSetUnion extends OMOSetViewAbstract {
+class OMOSetUnion implements OMOSetView {
     private OMOSetView setA;
     private OMOSetView setB;
 
@@ -65,15 +53,30 @@ class OMOSetUnion extends OMOSetViewAbstract {
     }
 
     @Override
-    protected List<Integer> performUpdate() {
-        List<Integer> data = new ArrayList<>();
+    public boolean contains(int element) {
+        return setA.contains(element) || setB.contains(element);
+    }
+
+    @Override
+    public int[] toArray() {
+        Set<Integer> data = new HashSet<>();
         Arrays.stream(setA.toArray()).forEach(data::add);
         Arrays.stream(setB.toArray()).forEach(data::add);
-        return data;
+
+        return data.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    @Override
+    public OMOSetView copy() {
+        Set<Integer> data = new HashSet<>();
+        Arrays.stream(setA.toArray()).forEach(data::add);
+        Arrays.stream(setB.toArray()).forEach(data::add);
+
+        return new OMOSet(data);
     }
 }
 
-class OMOSetIntersection extends OMOSetViewAbstract {
+class OMOSetIntersection implements OMOSetView {
     private OMOSetView setA;
     private OMOSetView setB;
 
@@ -83,14 +86,24 @@ class OMOSetIntersection extends OMOSetViewAbstract {
     }
 
     @Override
-    protected List<Integer> performUpdate() {
-        List<Integer> data = new ArrayList<>();
+    public boolean contains(int element) {
+        return setA.contains(element) && setB.contains(element);
+    }
+
+    @Override
+    public int[] toArray() {
+        return Arrays.stream(setA.toArray()).filter(setB::contains).toArray();
+    }
+
+    @Override
+    public OMOSetView copy() {
+        Set<Integer> data = new HashSet<>();
         Arrays.stream(setA.toArray()).filter(setB::contains).forEach(data::add);
-        return data;
+        return new OMOSet(data);
     }
 }
 
-class OMOSetComplement extends OMOSetViewAbstract {
+class OMOSetComplement implements OMOSetView {
     private OMOSetView setA;
     private OMOSetView setB;
 
@@ -99,17 +112,26 @@ class OMOSetComplement extends OMOSetViewAbstract {
         this.setB = setB;
     }
 
+
     @Override
-    protected List<Integer> performUpdate() {
-        List<Integer> data = new ArrayList<>();
+    public boolean contains(int element) {
+        return setA.contains(element) && !setB.contains(element);
+    }
+
+    @Override
+    public int[] toArray() {
+        return Arrays.stream(setA.toArray()).filter(number -> !setB.contains(number)).toArray();
+    }
+
+    @Override
+    public OMOSetView copy() {
+        Set<Integer> data = new HashSet<>();
         Arrays.stream(setA.toArray()).filter(number -> !setB.contains(number)).forEach(data::add);
-        Arrays.stream(setB.toArray()).filter(number -> !setA.contains(number)).forEach(data::add);
-        Arrays.stream(setB.toArray()).filter(number -> setA.contains(number)).forEach(data::add);
-        return data;
+        return new OMOSet(data);
     }
 }
 
-class OMOSetEven extends OMOSetViewAbstract {
+class OMOSetEven implements OMOSetView {
     private OMOSetView setA;
 
     OMOSetEven(OMOSetView setA) {
@@ -117,9 +139,19 @@ class OMOSetEven extends OMOSetViewAbstract {
     }
 
     @Override
-    protected List<Integer> performUpdate() {
-        List<Integer> data = new ArrayList<>();
+    public boolean contains(int element) {
+        return setA.contains(element) && (element % 2 == 0);
+    }
+
+    @Override
+    public int[] toArray() {
+        return Arrays.stream(setA.toArray()).filter(number -> number % 2 == 0).toArray();
+    }
+
+    @Override
+    public OMOSetView copy() {
+        Set<Integer> data = new HashSet<>();
         Arrays.stream(setA.toArray()).filter(number -> number % 2 == 0).forEach(data::add);
-        return data;
+        return new OMOSet(data);
     }
 }

@@ -3,14 +3,12 @@ package cz.cvut.fel.omo.blog.security;
 import cz.cvut.fel.omo.blog.Dashboard;
 import cz.cvut.fel.omo.blog.DisplayableComponent;
 import cz.cvut.fel.omo.blog.Post;
-import cz.cvut.fel.omo.blog.Topic;
 import lombok.Getter;
 import lombok.val;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author Lukas Forst

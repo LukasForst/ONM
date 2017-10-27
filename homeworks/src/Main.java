@@ -10,19 +10,10 @@ public class Main {
 
         OMOSetView copy = set.copy();
 
+        int[] a = set.toArray();
+        a[0] = 10;
+        System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(set.toArray()));
-        System.out.println(Arrays.toString(copy.toArray()));
-
-        set.remove(3);
-
-        System.out.println(Arrays.toString(set.toArray()));
-        System.out.println(Arrays.toString(copy.toArray()));
-
-        OMOSetView complement = new OMOSetComplement(set, copy);
-        System.out.println("Complement: " + Arrays.toString(complement.toArray()));
-
-        OMOSetView inter = new OMOSetIntersection(set, copy);
-        System.out.println("Inter: " + Arrays.toString(inter.toArray()));
 
     }
 }
